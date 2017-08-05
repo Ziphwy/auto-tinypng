@@ -35,12 +35,12 @@ describe('test case of file-reader', () => {
       files.should.be.an.Array().and.deepEqual([
         path.resolve(__dirname, './test-tmp/a.png'),
         path.resolve(__dirname, './test-tmp//b.png'),
-        path.resolve(__dirname, './test-tmp//sub/c.png'),
+        path.resolve(__dirname, './test-tmp/sub/c.png'),
       ]);
     }));
 
   it('make resolve directory', (done) => {
-    const dir = path.resolve(__dirname, '../mk-rsv-dir');
+    const dir = path.resolve(__dirname, '../test-tmp/mk-rsv-dir');
     fileUitls.mkdir(dir).then(() => {
       should(fs.accessSync(dir)).be.undefined();
       done();
